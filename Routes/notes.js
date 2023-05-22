@@ -63,6 +63,8 @@ router.put("/updatenote/:id", fetchUser, async (req, res) => {
 
 router.delete("/deletenote/:id", fetchUser, async (req, res) => {
     try {
+        console.log(req.id);
+        console.log(req.params.id);
         let note = await Note.findById(req.params.id);
         if (!note) return res.status(404).send("Not found!");
 
