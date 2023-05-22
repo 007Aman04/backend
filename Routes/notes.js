@@ -73,7 +73,7 @@ router.delete("/deletenote/:id", fetchUser, async (req, res) => {
         res.send("Successfully deleted the note");
     } catch (error) {
         console.error(error.message);
-        res.status(500).send("Some error occured");
+        res.status(500).send(error.message);
     }
 });
 
